@@ -1,0 +1,3 @@
+
+const Patients = () => <div className="p-6"><h1 className="text-2xl font-bold">Doctor Patients</h1></div>
+export default Patients
