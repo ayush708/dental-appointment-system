@@ -1,0 +1,30 @@
+{
+  "name": "dental-appointment-system",
+  "version": "1.0.0",
+  "description": "A comprehensive MERN stack dental appointment management system",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm start",
+    "frontend": "cd frontend && npm run dev",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayush708/dental-appointment-system.git"
+  },
+  "keywords": [
+    "dental",
+    "appointment",
+    "mern",
+    "react",
+    "nodejs",
+    "mongodb",
+    "express"
+  ],
+  "author": "Ayush",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
