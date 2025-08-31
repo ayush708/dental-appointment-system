@@ -27,9 +27,9 @@ const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-800 dark:to-blue-900 text-white py-20">
+      <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-800 dark:to-blue-900 text-white py-20 hero-surface">
         <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative container-safe">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,16 +44,16 @@ const HomePage = () => {
               Experience world-class dental care with our team of expert dentists 
               and state-of-the-art technology.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/register"
-                className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105"
+                className="btn-modern bg-gradient-to-r from-yellow-400 to-yellow-500 text-blue-900 hover:from-yellow-500 hover:to-yellow-600"
               >
                 Book Appointment
               </Link>
               <Link
                 to="/about"
-                className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 font-bold py-4 px-8 rounded-lg transition-all duration-200"
+        className="btn-glass font-semibold"
               >
                 Learn More
               </Link>
@@ -64,7 +64,7 @@ const HomePage = () => {
 
       {/* Features Section */}
       <section className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container-safe">
           <motion.div
             variants={staggerContainer}
             initial="initial"
@@ -117,7 +117,7 @@ const HomePage = () => {
               <motion.div
                 key={feature.title}
                 variants={fadeInUp}
-                className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-medium hover:shadow-hard transition-shadow duration-300 border border-gray-200 dark:border-gray-700"
               >
                 <div className={`w-16 h-16 bg-${feature.color}-100 dark:bg-${feature.color}-900/20 rounded-2xl flex items-center justify-center mb-6`}>
                   <feature.icon className={`w-8 h-8 text-${feature.color}-600 dark:text-${feature.color}-400`} />
@@ -136,7 +136,7 @@ const HomePage = () => {
 
       {/* Services Preview */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="container-safe">
           <motion.div
             variants={staggerContainer}
             initial="initial"
@@ -179,7 +179,7 @@ const HomePage = () => {
               <motion.div
                 key={service}
                 variants={fadeInUp}
-                className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-300 cursor-pointer"
+                className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-300 cursor-pointer border border-gray-200 dark:border-gray-700"
               >
                 <h4 className="font-semibold text-gray-900 dark:text-white text-center">
                   {service}
@@ -197,7 +197,7 @@ const HomePage = () => {
           >
             <Link
               to="/services"
-              className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-200"
+              className="btn-modern"
             >
               View All Services
             </Link>

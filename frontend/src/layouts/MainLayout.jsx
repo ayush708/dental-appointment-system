@@ -84,7 +84,7 @@ const MainLayout = ({ children }) => {
       </AnimatePresence>
 
       {/* Main Content */}
-      <main className="min-h-screen">
+  <main className="min-h-screen">
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}
@@ -93,7 +93,7 @@ const MainLayout = ({ children }) => {
             exit="out"
             variants={pageVariants}
             transition={pageTransition}
-            className="w-full"
+    className="w-full animate-shine"
           >
             {children || <Outlet />}
           </motion.div>

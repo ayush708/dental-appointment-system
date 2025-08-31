@@ -33,13 +33,13 @@ const Header = ({ onMenuClick }) => {
   }
 
   return (
-    <header className="bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 bg-white/70 dark:bg-gray-900/60 backdrop-blur border-b border-gray-200/70 dark:border-gray-800">
+      <div className="container-safe">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl shadow-glow flex items-center justify-center">
                 <svg
                   className="w-6 h-6 text-white"
                   fill="none"
@@ -61,15 +61,15 @@ const Header = ({ onMenuClick }) => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   item.current
-                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700'
+                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 shadow-sm'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800/60'
                 }`}
               >
                 {item.name}
@@ -162,16 +162,16 @@ const Header = ({ onMenuClick }) => {
                 </div>
               </>
             ) : (
-              <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-4">
                 <Link
                   to="/login"
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium"
+          className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium"
                 >
                   Sign in
                 </Link>
                 <Link
                   to="/register"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-medium transition-colors"
+          className="btn-modern h-10 px-4"
                 >
                   Sign up
                 </Link>
@@ -192,16 +192,16 @@ const Header = ({ onMenuClick }) => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+    {/* Mobile Navigation */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden"
+      className="md:hidden"
             >
-              <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-50 dark:bg-gray-700 rounded-md">
+      <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-50/80 dark:bg-gray-800/70 backdrop-blur rounded-md border border-gray-200/70 dark:border-gray-700">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
@@ -209,7 +209,7 @@ const Header = ({ onMenuClick }) => {
                     className={`block px-3 py-2 rounded-md text-base font-medium ${
                       item.current
                         ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                        : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-600'
+        : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700'
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -218,7 +218,7 @@ const Header = ({ onMenuClick }) => {
                 ))}
                 
                 {!isAuthenticated && (
-                  <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-600">
+      <div className="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
                     <Link
                       to="/login"
                       className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-600"
@@ -228,7 +228,7 @@ const Header = ({ onMenuClick }) => {
                     </Link>
                     <Link
                       to="/register"
-                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-600"
+          className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Sign up
